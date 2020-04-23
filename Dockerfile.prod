@@ -22,6 +22,9 @@ RUN npm run build
 # Select base image
 FROM nginx
 
+# Expose port
+EXPOSE 80
+
 # Copy result of build from build stage
 COPY --from=build-stage ./app/build ./usr/share/nginx/html 
 
